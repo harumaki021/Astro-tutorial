@@ -23,13 +23,13 @@ const listStyleType = "'\\1F44D'";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <!-- jsの式や関数をHTMLセクションでつかう場合は{}でくくる -->
-		<title>{pageTitle}</title>
+    <title>{pageTitle}</title>
     <style define:vars={{skillColor, fontWeight, textCase, listStyleType}}>
       h1 {
         color: coral;
@@ -42,12 +42,12 @@ const listStyleType = "'\\1F44D'";
         list-style-type: var(--listStyleType);
       }
     </style>
-	</head>
-	<body>
+  </head>
+  <body>
   <a href="/">ホーム</a>
   <a href="/about/">About</a>
   <a href="/blog/">Blog</a>
-		<h1>{pageTitle}</h1>
+    <h1>{pageTitle}</h1>
     <h2>誰</h2>
       <p>私はAstroの入門チュートリアルを進めています。これは私のウェブサイトの2番目のページで、自分で作った初めてのページです！</p>
 
@@ -72,5 +72,5 @@ const listStyleType = "'\\1F44D'";
       {finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
       <!-- 3項演算子に基づいて表示。trueの場合の文字列が表示される -->
       {goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
-	</body>
+  </body>
 </html>
