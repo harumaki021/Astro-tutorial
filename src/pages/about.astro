@@ -1,9 +1,8 @@
 ---
-// componentsインポート
 import BaseLayout from '../layouts/BaseLayout.astro';
-
- // 定数を宣言
 const pageTitle = "私について";
+
+// 定数を宣言
 const identity = {
   firstName: "harumaki021",
   country: "金沢",
@@ -23,7 +22,7 @@ const textCase = "none";
 const listStyleType = "'\\1F44D'";
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
     <style define:vars={{skillColor, fontWeight, textCase, listStyleType}}>
       h1 {
         color: coral;
