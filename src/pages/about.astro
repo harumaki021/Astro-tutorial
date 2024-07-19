@@ -1,0 +1,76 @@
+---
+ // cssインポート
+import '../styles/global.css';
+ // 定数を宣言
+const pageTitle = "私について";
+const identity = {
+  firstName: "harumaki021",
+  country: "金沢",
+  occupation: "インフラエンジニア",
+  hobbies: ["VR", "LOVOTと遊ぶこと", "人間観察"],
+};
+// 配列
+const skills = ["HTML", "CSS", "JavaScript", "Astro", "ちょっとだけセキュリティわかる"];
+// 変数を定義
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "darkblue";
+const fontWeight = "bold";
+const textCase = "none";
+const listStyleType = "'\\1F44D'";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <!-- jsの式や関数をHTMLセクションでつかう場合は{}でくくる -->
+		<title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase, listStyleType}}>
+      h1 {
+        color: coral;
+        font-size: 2rem
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+        list-style-type: var(--listStyleType);
+      }
+    </style>
+	</head>
+	<body>
+  <a href="/">ホーム</a>
+  <a href="/about/">About</a>
+  <a href="/blog/">Blog</a>
+		<h1>{pageTitle}</h1>
+    <h2>誰</h2>
+      <p>私はAstroの入門チュートリアルを進めています。これは私のウェブサイトの2番目のページで、自分で作った初めてのページです！</p>
+
+      <p>このサイトはチュートリアルを進めるにつれて更新されていきます。定期的にチェックして、私の旅の様子を見に来てください！</p>
+
+      <p>以下は私に関するいくつかの事実です。</p>
+        <ul>
+          <li>私の名前は{identity.firstName}です。</li>
+          <li>{identity.country}に住んでおり、{identity.occupation}として働いています。</li>
+          {identity.hobbies.length >= 2 &&
+            <li>私の2つの趣味は{identity.hobbies[0]}と{identity.hobbies[1]}です。</li>
+          }
+        </ul>
+        <p>私のスキルは以下の通りです。</p>
+        <ul>
+          {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+      <!-- 変数を評価し、条件に応じてHTMLがレンダリングされる。falseのものはHTMLとして出力されない -->
+      <!-- happyはtrue -->
+      {happy && <p>I am happy to be learning Astro! Astroを学べて幸せです！</p>}
+      <!-- finishedはfalse。ソースにも表示されない -->
+      {finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
+      <!-- 3項演算子に基づいて表示。trueの場合の文字列が表示される -->
+      {goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
+	</body>
+</html>
