@@ -1,8 +1,8 @@
 ---
 // cssインポート
 import '../styles/global.css';
-// componentsインポート
-import Navigation from '../components/Navigation.astro';'../components/Navigation.astro'
+import Header from '../components/Header.astro';
+
 const pageTitle="ブログやで"
 ---
 
@@ -15,7 +15,7 @@ const pageTitle="ブログやで"
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Navigation />
+    <Header />
     <h1>{pageTitle}</h1>
     <p>ブログのページです</p>
     <ul>

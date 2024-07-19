@@ -1,6 +1,9 @@
 ---
  // cssインポート
 import '../styles/global.css';
+// componentsインポート
+import Header from '../components/Header.astro';
+
  // 定数を宣言
 const pageTitle = "私について";
 const identity = {
@@ -44,9 +47,7 @@ const listStyleType = "'\\1F44D'";
     </style>
   </head>
   <body>
-  <a href="/">ホーム</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
+  <Header />
     <h1>{pageTitle}</h1>
     <h2>誰</h2>
       <p>私はAstroの入門チュートリアルを進めています。これは私のウェブサイトの2番目のページで、自分で作った初めてのページです！</p>
