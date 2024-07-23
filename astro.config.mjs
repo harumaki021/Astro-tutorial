@@ -4,5 +4,6 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   server: {
     hmr: true // Hot Module Replacement (ホットモジュールリプレースメント) を有効にします
-  }
+  },
+  site: "https://example.com"
 });
