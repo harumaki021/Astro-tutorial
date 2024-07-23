@@ -1,7 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greetings';
 const pageTitle = "ほむぱげ";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <h2>kokoni sabutai</h2>
+<!-- hydratedコンポーネントのみonClickが再実行される -->
+<!--
+  <Greeting messages={["どうも", "こんにちは", "初めまして", "ようこそ"]} />
+ -->
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>
